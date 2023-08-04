@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 04, 2023 at 11:25 AM
+-- Generation Time: Aug 04, 2023 at 11:42 AM
 -- Server version: 8.0.34
 -- PHP Version: 8.2.9
 
@@ -34,12 +34,9 @@ CREATE TABLE `review` (
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_edited_by_admin` tinyint(1) NOT NULL,
-  `image` varchar(300) COLLATE utf8mb4_general_ci NOT NULL
+  `image` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `is_published` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `review`
---
 
 -- --------------------------------------------------------
 
@@ -86,7 +83,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
