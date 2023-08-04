@@ -11,8 +11,6 @@ session_start();
     <h2>Admin Dashboard</h2>
     <a href="index.php">Main page</a><br>
     <a href="logout.php">Logout</a>
-    
-    <!-- Display the list of reviews to edit -->
     <?php
     include('db_connect.php');
     

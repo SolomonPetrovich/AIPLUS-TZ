@@ -3,11 +3,9 @@ include('db_connect.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    //if is_admin is checked $is_admin shoudl be 1 else 0
     $is_admin = isset($_POST["is_admin"]) ? 1 : 0;
     $hashedPassword = md5($password);
 
-    //check username is taken or not
     $pre_sql = "SELECT * FROM users WHERE username='$username'";
     $pre_result = mysqli_query($conn, $pre_sql);
     if (mysqli_num_rows($pre_result) == 1) {

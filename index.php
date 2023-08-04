@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session
+session_start();
 
 include('db_connect.php');
 
@@ -26,10 +26,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     $reviews[] = $row;
 }
 
-// Check if the user is logged in
 $loggedInUser = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 
-//check is user admin or not by property of user of is_admin
 $is_admin = isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : null;
 ?>
 

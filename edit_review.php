@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Redirect to the login page if admin is not logged in
 if (!isset($_SESSION['is_admin'])) {
     header('Location: login.php');
     exit;
@@ -13,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewId = $_POST['id'];
     $editedMessage = $_POST['message'];
 
-    // Update the review in the database
     $sql = "UPDATE review SET message='$editedMessage', is_edited_by_admin=1 WHERE id=$reviewId";
     $result = mysqli_query($conn, $sql);
     if ($result) {
