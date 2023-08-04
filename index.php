@@ -17,7 +17,8 @@ if (!in_array($order, $allowedSortOrders)) {
     $order = 'desc';
 }
 
-$sql = "SELECT * FROM review ORDER BY $sort $order";
+//make query select only is_published=true
+$sql = "SELECT * FROM review WHERE is_published=1 ORDER BY $sort $order";
 $result = mysqli_query($conn, $sql);
 
 $reviews = array();
